@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ucarspringboot.demo.mapper.IssuesDao">
+<resultMap id="IssuesId" type="com.ucarspringboot.demo.model.Issues">
+    <result column="id" property="id" />
+    <result column="kee" property="kee" />
+</resultMap>
+
+<sql id="Base_Column_List">
+    id, kee
+</sql>
+
+<select id="findById" resultMap="IssuesId" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from issues
+    where id = 1
+</select>
+
+</mapper>
